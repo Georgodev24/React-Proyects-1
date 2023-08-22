@@ -7,7 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -37,7 +37,7 @@ body {
 }
 
 .board h1 {
-  color: #eee;
+  color: #00d9ff;
   margin-bottom: 16px;
 }
 
@@ -45,8 +45,8 @@ body {
   padding: 8px 12px;
   margin: 25px;
   background: transparent;
-  border: 2px solid #eee;
-  color: #eee;
+  border: 2px solid #00d9ff;
+  color: #eeeeee;
   width: 100px;
   border-radius: 5px;
   transition: 0.2s;
@@ -84,7 +84,7 @@ body {
 
 .square.is-selected {
   color: #fff;
-  background: #09f;
+  background: #00d9ff;
 }
 
 .winner {
@@ -123,7 +123,7 @@ body {
 .square {
   width: 100px;
   height: 100px;
-  border: 2px solid #eee;
+  border: 2px solid #00d9ff;
   border-radius: 5px;
   display: grid;
   place-items: center;

@@ -3,17 +3,31 @@ import { Square } from "./components/square.jsx";
 import { TURNS, checkEndGame } from "./constants.js";
 import { checkWinner } from "./logic/boards.js";
 import { WinnerModal } from "./components/WinnerModal.jsx";
+import {
+  saveGameToStorage,
+  resetGameToStorage,
+} from "./logic/storage/index.js";
 import confetti from "canvas-confetti";
 
 function App() {
-  const [board, setBoard] = useState(Array(9).fill(null));
-  const [turn, setTurn] = useState(TURNS.X);
+  const [board, setBoard] = useState(() => {
+    const boardFromStorage = window.localStorage.getItem("board");
+    return boardFromStorage
+      ? JSON.parse(boardFromStorage)
+      : Array(9).fill(null);
+  });
+  const [turn, setTurn] = useState(() => {
+    const turnsFromStorage = window.localStorage.getItem("turn");
+    return turnsFromStorage ?? TURNS.X;
+  });
   const [winner, setWinner] = useState(null);
 
   const resetGame = () => {
     setBoard(Array(9).fill(null));
     setTurn(TURNS.X);
     setWinner(null);
+
+    resetGameToStorage();
   };
 
   const updateBoard = (index) => {
@@ -25,6 +39,8 @@ function App() {
 
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
     setTurn(newTurn);
+
+    saveGameToStorage({ board: newBoard, turn: newTurn });
 
     const newWinner = checkWinner(newBoard);
     if (newWinner) {

@@ -10,4 +10,19 @@
   .button {
     @apply bg-primary-red text-neutral-light-gray block w-max py-4 px-12 rounded-full;
   }
+
+  .footer-area {
+    grid-template-areas:
+      'form'
+      'navigation'
+      'social-media'
+      'logo'
+      'copyright';
+  }
+
+  .footer-area-md {
+    grid-template-areas:
+      'logo           navigation  form'
+      'social-media   navigation  copy';
+  }
 }

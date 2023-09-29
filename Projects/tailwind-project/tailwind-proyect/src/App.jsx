@@ -2,6 +2,8 @@ import './App.css'
 import Header from './components/Header'
 import Intro from './components/Intro'
 import About from './components/About'
+import WhatSaid from './components/WhatSaid'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <Header />
       <Intro />
       <About />
+      <WhatSaid />
+      <Footer />
     </main>
   )
 }

@@ -18,6 +18,9 @@ export default {
         'open-menu': 'url("./images/icon-hamburger.svg")',
         'close-menu': 'url("./images/icon-close.svg")',
       },
+      flex: {
+        '1-0': '1 0 auto',
+      },
     },
   },
   plugins: [],

@@ -11,18 +11,26 @@
     @apply bg-primary-red text-neutral-light-gray block w-max py-4 px-12 rounded-full;
   }
 
+  .carousel {
+    @apply flex flex-nowrap overflow-hidden;
+  }
+
+  .element {
+    @apply flex-1-0 mx-14 bg-gray-600 w-[500px] h-[500px];
+  }
+
   .footer-area {
     grid-template-areas:
       'form'
       'navigation'
-      'social-media'
+      'social'
       'logo'
-      'copyright';
+      'copy';
   }
 
   .footer-area-md {
     grid-template-areas:
-      'logo           navigation  form'
-      'social-media   navigation  copy';
+      'logo     navigation form'
+      'social   navigation copy';
   }
 }

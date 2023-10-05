@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import facebookLogo from '../images/icon-facebook.svg'
 import youtubeLogo from '../images//icon-youtube.svg'
 import twitterLogo from '../images/icon-twitter.svg'
@@ -6,22 +7,52 @@ import instagramLogo from '../images/icon-instagram.svg'
 import brandingLogo from '../images/logo.svg'
 
 const Footer = () => {
+  const [email, setEmail] = useState('')
+  const [error, setError] = useState('')
+
+  const handleChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (!email) {
+      setError('Please enter your email.')
+    } else if (!isValidEmail(email)) {
+      setError('Please enter a valid email.')
+    } else {
+      setError('') // Borrar cualquier mensaje de error anterior
+      // Puedes agregar aquí la lógica para enviar el formulario
+    }
+  }
+
+  const isValidEmail = (email) => {
+    // Esta función verifica si el correo electrónico está en un formato válido
+    // Puedes usar una expresión regular u otras validaciones según tus necesidades
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  }
+
   return (
     <footer className='bg-neutral-very-blue py-24'>
       <section className='wrapped grid gap-12 justify-items-center footer-area md:footer-area-md md:grid-cols-3 md:justify-items-stretch'>
-        <form className='flex gap-4 min-w-[100px] w-full [grid-area:form]'>
+        <form
+          className='flex gap-4 min-w-[100px] w-full [grid-area:form]'
+          onSubmit={handleSubmit}>
           <input
             type='email'
             placeholder='Updates in your email...'
             className='min-w-[50px] flex-1 rounded-full px-4'
+            onSubmit={handleChange}
           />
 
           <input
             type='submit'
             value='GO'
-            className='py-3 px-8 bg-primary-red rounded-full text-white hover:bg-hover-input '
+            className='py-3 px-8 bg-primary-red rounded-full text-white hover:bg-hover-input'
           />
         </form>
+        {error && <p className='text-red-500'>{error}</p>}
 
         <nav className='grid grid-cols-[max-content_max-content] gap-y-4 justify-between text-white text-left w-4/5 [grid-area:navigation] md:w-full'>
           <a href='#' className='hover:text-primary-red'>

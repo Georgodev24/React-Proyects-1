@@ -5,6 +5,7 @@ import twitterLogo from '../images/icon-twitter.svg'
 import pinterestLogo from '../images/icon-pinterest.svg'
 import instagramLogo from '../images/icon-instagram.svg'
 import brandingLogo from '../images/logo.svg'
+import { validation, validEmail } from '../../logic/validation'
 
 const Footer = () => {
   const [email, setEmail] = useState('')
@@ -16,21 +17,12 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    if (!email) {
-      setError('Please enter your email.')
-    } else if (!isValidEmail(email)) {
-      setError('Please enter a valid email.')
+    const errorFound = validation(email)
+    if (errorFound) {
+      setError(errorFound)
     } else {
-      setError('') // Borrar cualquier mensaje de error anterior
-      // Puedes agregar aquí la lógica para enviar el formulario
+      setError('Continue')
     }
-  }
-
-  const isValidEmail = (email) => {
-    // Esta función verifica si el correo electrónico está en un formato válido
-    // Puedes usar una expresión regular u otras validaciones según tus necesidades
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   }
 
   return (

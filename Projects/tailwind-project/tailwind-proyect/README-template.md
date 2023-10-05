@@ -33,10 +33,20 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/Georgodev24/Riak/tree/main/Projects/tailwind-project](https://your-solution-url.com)
-- Live Site URL: [https://app.netlify.com/drop/visionary-lebkuchen-6652ae](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Georgodev24/Riak/tree/main/Projects/tailwind-project/tailwind-proyect](https://your-solution-url.com)
+- Live Site URL: [https://riak.vercel.app](https://your-live-site-url.com)
 
 ## My process
+
+I initially configured my work environment to make styles in TailwindCSS, I structured the page by sections and I developed them little by little in a simple and fast way and then I took care of the more complex details, such as the slider or the error handling of the form.
+
+For the slider was the main challenge of the page, since I didn't want to make a state around it, I used react-slick and the initial results pleased me. Then, I gave some details to match the environment of the project, such as changing the color of the arrows or the repositioning of the slider dots.
+
+Then, it occurred to me that it was a good idea to create a component based on the customer testimonial letters, this way everything would be cleaner and it would be a reusable component.
+
+Then, I made the validation logic of the form according to the requirements through javascript and I also added an error message under the form.
+
+Finally I separated the components into folders to make it easier to locate the code of each section of the page and separated the validation logic to make everything as clean and modular as possible.
 
 ### Built with
 
@@ -51,53 +61,16 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I learned a way to make responsive carousels through other means than setting up a state, I also learned how to deploy applications in vercel, since I had always used github pages or netlify.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I would like to keep growing when it comes to creating reusable react components, I am aware that the site may not be properly composed and I would like to receive feedback to understand what things I can improve or what ideas would be useful to compose the site properly.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [https://react-slick.neostack.com](https://www.example.com) - This helped me for it has helped me to create a carousel component without the need to use states and all in a fast and easy way
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@Georgodev24](https://www.frontendmentor.io/profile/yourusername)

@@ -5,7 +5,6 @@ const WhatSaid = () => {
   return (
     <>
       <Carousel />
-
       <LayerWhatSaid />
     </>
   )

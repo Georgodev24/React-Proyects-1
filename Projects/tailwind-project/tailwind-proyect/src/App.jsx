@@ -1,9 +1,9 @@
 import './App.css'
 import Header from './components/header/Header'
-import Intro from './components/Intro'
-import About from './components/About'
-import WhatSaid from './components/WhatSaid'
-import Footer from './components/Footer'
+import Intro from './components/body/Intro'
+import About from './components/body/About'
+import WhatSaid from './components/body/WhatSaid'
+import Footer from './components/footer/Footer'
 
 function App() {
   return (

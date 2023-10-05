@@ -7,7 +7,7 @@ const LayerWhatSaid = () => {
         </h2>
         <a
           href='#'
-          className='button text-primary-red bg-neutral-light-gray mx-auto md:mx-0 md:justify-self-end'>
+          className='button text-primary-red bg-neutral-light-gray mx-auto md:mx-0 md:justify-self-end hover:text-primary-red/40'>
           Get Started
         </a>
       </div>

@@ -1,4 +1,4 @@
-import brandingLogo from '../images/logo.svg'
+import brandingLogo from '../../images/logo.svg'
 
 const Navbar = () => {
   return (
@@ -41,7 +41,7 @@ const Navbar = () => {
       </div>
       <a
         href='#'
-        className='button shadow-sm shadow-primary-red/30 hidden py-3 lg:block'>
+        className='button button-hover shadow-sm shadow-primary-red/30 hidden py-3 lg:block'>
         Get Started
       </a>
     </nav>

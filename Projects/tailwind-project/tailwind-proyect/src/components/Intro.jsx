@@ -18,7 +18,7 @@ const Intro = () => {
         </p>
         <a
           href='#'
-          className='button mx-auto shadow-2xl shadow-primary-red/30 md:mx-0'>
+          className='button button-hover mx-auto shadow-2xl shadow-primary-red/30 md:mx-0'>
           Get Started
         </a>
       </article>

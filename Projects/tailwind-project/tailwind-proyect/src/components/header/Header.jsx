@@ -1,5 +1,5 @@
-import shadowFigure from '../images/bg-tablet-pattern.svg'
-import Navbar from './Navbar'
+import shadowFigure from '../../images/bg-tablet-pattern.svg'
+import Navbar from './NavBar'
 
 const Header = () => {
   return (

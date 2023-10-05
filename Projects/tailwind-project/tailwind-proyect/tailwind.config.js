@@ -10,6 +10,7 @@ export default {
         'neutral-very-blue': 'hsl(233, 12%, 13%)',
         'neutral-pale-red': 'hsl(13, 100%, 96%)',
         'neutral-light-gray': 'hsl(0, 0%, 98%)',
+        'hover-input': 'hsl(12, 100%, 81%)',
       },
       fontFamily: {
         main: ['"Be Vietnam Pro"', 'sans-serif'],

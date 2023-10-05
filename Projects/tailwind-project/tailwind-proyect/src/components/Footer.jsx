@@ -19,18 +19,32 @@ const Footer = () => {
           <input
             type='submit'
             value='GO'
-            className='py-3 px-8 bg-primary-red rounded-full text-white'
+            className='py-3 px-8 bg-primary-red rounded-full text-white hover:bg-hover-input '
           />
         </form>
 
         <nav className='grid grid-cols-[max-content_max-content] gap-y-4 justify-between text-white text-left w-4/5 [grid-area:navigation] md:w-full'>
-          <a href='#'>Home</a>
-          <a href='#'>Pricing</a>
-          <a href='#'>Products</a>
-          <a href='#'>About Us</a>
-          <a href='#'>Careers</a>
-          <a href='#'>Community</a>
-          <a href='#'>Privacy Policy</a>
+          <a href='#' className='hover:text-primary-red'>
+            Home
+          </a>
+          <a href='#' className='hover:text-primary-red'>
+            Pricing
+          </a>
+          <a href='#' className='hover:text-primary-red'>
+            Products
+          </a>
+          <a href='#' className='hover:text-primary-red'>
+            About Us
+          </a>
+          <a href='#' className='hover:text-primary-red'>
+            Careers
+          </a>
+          <a href='#' className='hover:text-primary-red'>
+            Community
+          </a>
+          <a href='#' className='hover:text-primary-red'>
+            Privacy Policy
+          </a>
         </nav>
 
         <div className='flex flex-wrap gap-4 justify-between w-full [grid-area:social]'>

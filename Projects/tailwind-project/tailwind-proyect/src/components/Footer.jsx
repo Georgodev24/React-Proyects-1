@@ -97,7 +97,7 @@ const Footer = () => {
         </div>
 
         <a href='#' className='[grid-area:logo]'>
-          <img src={brandingLogo} alt='' />
+          <img src={brandingLogo} />
         </a>
 
         <p className='text-neutral-dark-blue text-center [grid-area:copy] md:text-right'>

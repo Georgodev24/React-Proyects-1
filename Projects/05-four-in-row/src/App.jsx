@@ -1,18 +1,21 @@
 import { useState } from 'react'
 import { Square } from './components/square.jsx'
-import { TURNS, checkEndGame } from './constants.js'
+import { TURNS, DIMENTIONS } from './constants'
 import { checkWinner } from './logic/boards.js'
 import { WinnerModal } from './components/WinnerModal.jsx'
 import { saveGameToStorage, resetGameToStorage } from './logic/storage/index.js'
 import confetti from 'canvas-confetti'
 
 function App() {
+  const initialBoard = Array.from({ length: DIMENTIONS.NumCols }, () =>
+    Array(DIMENTIONS.NumRows).fill(null)
+  )
+
   const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem('board')
-    return boardFromStorage
-      ? JSON.parse(boardFromStorage)
-      : Array(42).fill(null)
+    return boardFromStorage ? JSON.parse(boardFromStorage) : initialBoard
   })
+
   const [turn, setTurn] = useState(() => {
     const turnsFromStorage = window.localStorage.getItem('turn')
     return turnsFromStorage ?? TURNS.X
@@ -20,20 +23,34 @@ function App() {
   const [winner, setWinner] = useState(null)
 
   const resetGame = () => {
-    setBoard(Array(42).fill(null))
+    setBoard(
+      Array(6)
+        .fill(null)
+        .map(() => Array(7).fill(null))
+    )
     setTurn(TURNS.X)
     setWinner(null)
 
     resetGameToStorage()
   }
 
-  const updateBoard = (index) => {
-    if (board[index] || winner) return
-
+  const updateBoard = (colIndex) => {
     const newBoard = [...board]
-    newBoard[index] = turn
-    setBoard(newBoard)
+    let rowToPlace = -1
 
+    for (let rowIndex = 0; rowIndex < DIMENTIONS.NumRows; rowIndex++) {
+      if (newBoard[colIndex][rowIndex] === null) {
+        rowToPlace = rowIndex
+        break
+      }
+    }
+
+    if (rowToPlace !== -1) {
+      newBoard[colIndex][rowToPlace] = turn
+      setBoard(newBoard)
+    } else {
+      return
+    }
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
 
@@ -50,17 +67,22 @@ function App() {
 
   return (
     <main className='board'>
-      <h1>Tic Tac Toe</h1>
+      <h1>Conecta 4</h1>
       <button onClick={resetGame}>Reset</button>
-      <section className='game'>
-        {board.map((square, index) => {
-          return (
-            <Square key={index} updateBoard={updateBoard} index={index}>
-              {square}
-            </Square>
-          )
-        })}
-      </section>
+      <div className='game'>
+        {Array.from({ length: DIMENTIONS.NumCols }).map((_, colIndex) => (
+          <div
+            key={colIndex}
+            className='r-square'
+            onClick={() => updateBoard(colIndex)}>
+            {Array.from({ length: DIMENTIONS.NumRows }).map((_, rowIndex) => (
+              <Square key={rowIndex} colIndex={colIndex} rowIndex={rowIndex}>
+                <div className='c-square'>{board[colIndex][rowIndex]}</div>
+              </Square>
+            ))}
+          </div>
+        ))}
+      </div>
 
       <section className='turn'>
         <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>

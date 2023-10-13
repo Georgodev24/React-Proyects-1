@@ -61,7 +61,8 @@ body {
 
 .board .game {
   display: grid;
-  grid-template-columns: repeat(7, 6fr);
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   gap: 10px;
 }
 
@@ -120,13 +121,17 @@ body {
   gap: 15px;
 }
 
-.square {
+.r-square .c-square {
   width: 100px;
   height: 100px;
-  border: 2px solid #00d9ff;
+  border: 2px solid #eee;
   border-radius: 5px;
   display: grid;
   place-items: center;
   cursor: pointer;
   font-size: 48px;
+}
+.r-square {
+  display: flex;
+  flex-direction: column-reverse;
 }

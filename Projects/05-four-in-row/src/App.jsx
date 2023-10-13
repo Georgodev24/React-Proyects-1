@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Square } from './components/square.jsx'
 import { TURNS, DIMENTIONS } from './constants'
-import { checkWinner } from './logic/boards.js'
-import { WinnerModal } from './components/WinnerModal.jsx'
+/*import { checkWinner } from './logic/boards.js'*/
+/*import { WinnerModal } from './components/WinnerModal.jsx'*/
 import { saveGameToStorage, resetGameToStorage } from './logic/storage/index.js'
 import confetti from 'canvas-confetti'
 
@@ -20,7 +20,7 @@ function App() {
     const turnsFromStorage = window.localStorage.getItem('turn')
     return turnsFromStorage ?? TURNS.X
   })
-  const [winner, setWinner] = useState(null)
+  /*const [winner, setWinner] = useState(null)*/
 
   const resetGame = () => {
     setBoard(
@@ -29,7 +29,7 @@ function App() {
         .map(() => Array(7).fill(null))
     )
     setTurn(TURNS.X)
-    setWinner(null)
+    // setWinner(null)
 
     resetGameToStorage()
   }
@@ -56,12 +56,14 @@ function App() {
 
     saveGameToStorage({ board: newBoard, turn: newTurn })
 
-    const newWinner = checkWinner(newBoard)
+    {
+      /*const newWinner = checkWinner(newBoard)
     if (newWinner) {
       confetti()
       setWinner(newWinner)
     } else if (checkEndGame(newBoard)) {
       setWinner(false)
+    }*/
     }
   }
 
@@ -77,7 +79,9 @@ function App() {
             onClick={() => updateBoard(colIndex)}>
             {Array.from({ length: DIMENTIONS.NumRows }).map((_, rowIndex) => (
               <Square key={rowIndex} colIndex={colIndex} rowIndex={rowIndex}>
-                <div className='c-square'>{board[colIndex][rowIndex]}</div>
+                <div className='c-square'>
+                  {board[colIndex] && board[colIndex][rowIndex]}
+                </div>
               </Square>
             ))}
           </div>
@@ -89,7 +93,7 @@ function App() {
         <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
       </section>
 
-      <WinnerModal resetGame={resetGame} winner={winner} />
+      {/*<WinnerModal resetGame={resetGame} winner={winner} />*/}
     </main>
   )
 }

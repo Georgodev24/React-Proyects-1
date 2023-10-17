@@ -1,7 +1,7 @@
 export const TURNS = {
   X: '❌',
   O: '⭕',
-};
+}
 
 export const WINNER_COMPS = [
   [0, 1, 2],
@@ -12,8 +12,8 @@ export const WINNER_COMPS = [
   [2, 5, 8],
   [0, 4, 8],
   [2, 4, 6],
-];
+]
 
 export const checkEndGame = (newBoard) => {
-  return newBoard.every((square) => square !== null);
-};
+  return newBoard.every((square) => square !== null)
+}

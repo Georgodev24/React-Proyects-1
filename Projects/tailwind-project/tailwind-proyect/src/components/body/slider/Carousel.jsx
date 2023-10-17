@@ -1,9 +1,9 @@
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import anishaAvatar from '../../images/avatar-anisha.png'
-import avatarAli from '../../images/avatar-ali.png'
-import avatarRichard from '../../images/avatar-richard.png'
-import avatarShanai from '../../images/avatar-shanai.png'
+import anishaAvatar from '../../../images/avatar-anisha.png'
+import avatarAli from '../../../images/avatar-ali.png'
+import avatarRichard from '../../../images/avatar-richard.png'
+import avatarShanai from '../../../images/avatar-shanai.png'
 
 import Slider from 'react-slick'
 import ClientCard from './ClientCard'

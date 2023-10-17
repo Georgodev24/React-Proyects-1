@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import facebookLogo from '../images/icon-facebook.svg'
-import youtubeLogo from '../images//icon-youtube.svg'
-import twitterLogo from '../images/icon-twitter.svg'
-import pinterestLogo from '../images/icon-pinterest.svg'
-import instagramLogo from '../images/icon-instagram.svg'
-import brandingLogo from '../images/logo.svg'
+import facebookLogo from '../../images/icon-facebook.svg'
+import youtubeLogo from '../../images//icon-youtube.svg'
+import twitterLogo from '../../images/icon-twitter.svg'
+import pinterestLogo from '../../images/icon-pinterest.svg'
+import instagramLogo from '../../images/icon-instagram.svg'
+import brandingLogo from '../../images/logo.svg'
 import { validation, validEmail } from '../../logic/validation'
 
 const Footer = () => {
